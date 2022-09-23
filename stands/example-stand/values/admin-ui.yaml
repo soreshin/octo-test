@@ -1,5 +1,5 @@
 env: 15test
-tag: 3.1.10
+tag: 3.1.18
 application:
   proxy_pass:
     lead_generation: "http://{{ if .Values.global.parent_prefix }}{{ .Values.global.parent_prefix }}{{ else }}{{ .Values.global.release_prefix }}{{- end }}-leadgen-api-gateway.{{ .Values.global.target_namespace }}.svc.cluster.local:19100/api/v1"
