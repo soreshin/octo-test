@@ -1,0 +1,8 @@
+env: 15test
+tag: 3.1.18
+application:
+  proxy_pass:
+    lead_generation: "http://{{ if .Values.global.parent_prefix }}{{ .Values.global.parent_prefix }}{{ else }}{{ .Values.global.release_prefix }}{{- end }}-leadgen-api-gateway.{{ .Values.global.target_namespace }}.svc.cluster.local:19100/api/v1"
+    admin_service: "http://{{ if .Values.global.parent_prefix }}{{ .Values.global.parent_prefix }}{{ else }}{{ .Values.global.release_prefix }}{{- end }}-admin-api-gateway.{{ .Values.global.target_namespace }}.svc.cluster.local:19110/api/v1"
+    scoring: "http://{{ if .Values.global.parent_prefix }}{{ .Values.global.parent_prefix }}{{ else }}{{ .Values.global.release_prefix }}{{- end }}-scoring-api-gateway.{{ .Values.global.target_namespace }}.svc.cluster.local:19095/api/v1/operations"
+    audience_service: "http://{{ if .Values.global.parent_prefix }}{{ .Values.global.parent_prefix }}{{ else }}{{ .Values.global.release_prefix }}{{- end }}-audience-api-gateway.{{ .Values.global.target_namespace }}.svc.cluster.local:19110/api/v1"
