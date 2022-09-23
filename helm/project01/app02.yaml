@@ -2,5 +2,6 @@ app2:
   image:
     name: app2-image
     tag: 2.0.1
-
 newtag: 1
+image:
+  tag: 6.8.12
