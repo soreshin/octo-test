@@ -1,4 +1,4 @@
 app2:
   image:
-    name: app2-image
+    name: 3.2.1
     tag: 2.0.1
